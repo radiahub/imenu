@@ -1,0 +1,17 @@
+{
+  "service_id"   : "14400",
+  "service_name" : "No idea what you mean",
+  "nodes" : [
+    {
+      "node_id" : "main",
+      "text" : "",
+      "menu" : [
+      ],
+      "input": {
+        "variable" : "user_name",
+        "type"     : "ALPHANUMERIC",
+        "value"    : ""
+      }
+    }
+  ]
+}

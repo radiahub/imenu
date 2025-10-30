@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="theme-light">
+<head>
+	<meta http-equiv="Content-Security-Policy" content="connect-src *; child-src * 'unsafe-inline' blob: data:; default-src * 'unsafe-inline' 'unsafe-eval' blob: data:; img-src * blob: data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' blob: data:;">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, interactive-widget=resizes-content" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta charset="UTF-8">
+
+	<title>radiahub imenu editor</title>
+	<link rel="icon" href="favicon.png" type="image/png">
+
+	<!-- Import material icons -->
+	<link href="import/material-icons/iconfont/material-icons.css" rel="stylesheet">
+
+	<!-- Import external libraries -->
+	<script src="import/jquery/jquery-3.4.1.min.js"></script>
+	<script src="import/moment/moment.min.js"></script>
+	<script src="import/ace/src/ace.js"></script>
+	<script src="import/ace/src/mode-json.js"></script>
+
+	<!-- LINKTO <link href="lib/lib.min.css" rel="stylesheet"> -->
+	<link href="lib/css/colors.css"  rel="stylesheet">
+	<link href="lib/css/default.css" rel="stylesheet">
+	<!-- LINKTO -->
+
+	<!-- LINKTO <link href="radiahub/radiahub.min.css" rel="stylesheet"> -->
+	<link href="radiahub/css/themes.css" rel="stylesheet">
+	<!-- LINKTO -->
+
+	<!-- LINKTO <script src="lib/lib.min.js"></script> -->
+	<script src="lib/js/lib.js"></script>
+	<script src="lib/js/datetime.js"></script>
+	<script src="lib/js/connect.js"></script>
+	<script src="lib/js/globalization.js"></script>
+	<script src="lib/js/storage.js"></script>
+	<script src="lib/js/application.js"></script>
+	<script src="lib/js/cookies.js"></script>
+	<script src="lib/js/countries.js"></script>
+	<script src="lib/js/filesystem.js"></script>
+	<script src="lib/js/run.js"></script>
+	<script src="lib/js/xdbref.js"></script>
+	<!-- LINKTO -->
+
+	<!-- LINKTO <link href="ui/ui.min.css" rel="stylesheet"> -->
+	<link href="ui/css/controls.css" rel="stylesheet">
+	<!-- LINKTO -->
+
+	<!-- LINKTO <script src="ui/ui.min.js"></script> -->
+	<!-- LINKTO <script src="ui/ui.min.js"></script> -->
+	<script src="ui/js/UILib.js"></script>
+	<script src="ui/js/UIDialogs.js"></script>
+	<script src="ui/js/UIControl.js"></script>
+	<!-- LINKTO -->
+
+	<script src="imenu/js/imenucli.js"></script>
+	<script>
+		var imenu_task    = "[do]";
+		var imenu_service = "[service]";
+		var imenu_name    = "[name]";
+	</script>
+
+	<style>
+		.ace_editor {
+			font-family: "Monaco", "Courier New", monospace !important;
+		}
+		.ace_line span {
+		  font-family: "Monaco", "Courier New", monospace !important;
+		}
+		.ace_editor div { 
+			font: inherit !important; 
+		}
+		.editor-bg-textarea     { background-color: #272822; }
+		.editor-bg-gutter       { background-color: #2F3129; }
+		.cli-input:focus-within { border-bottom:1px solid #FFFFFF !important; }
+	</style>
+
+</head>
+
+<body class="bg-black fg-darkwhite">
+
+	<div id="DIV_TERMINAL" class="page monospace bg-darkblue" style="display:none;">
+		HELLO WORLD!
+	</div>
+
+	<div id="DIV_EDITOR" class="page monospace editor-bg-gutter" style="display:none;">
+		<div style="height:48px; padding-left:75px; padding-top:8px;">
+			<div class="float-left fit-content fit-height flex center padding-s-right">
+				<div class="float-left flex center cli-input" style="width:100%; height:fit-content; padding:5px 0 5px 0; border-bottom:1px solid transparent;">
+					<input id="INP_SERVICE_ID" type="text" class="monospace fg-white" value="" placeholder="service_id" maxlength="16" autocomplete="off" style="font-size:inherit; width:100%; padding:0 !important; background-color:inherit; color:inherit; border:none;">
+				</div>
+			</div>
+			<div class="float-left fit-content fit-height flex center left padding-s-right">
+				<div class="height:75%;" style="border-left:1px solid #999999;">&nbsp;</div>
+			</div>
+			<div class="float-left fit-content fit-height flex center padding-s-right" style="width:50ch;">
+				<div class="float-left flex center cli-input" style="width:100%; height:fit-content; padding:5px 0 5px 0; border-bottom:1px solid transparent;">
+					<input id="INP_SERVICE_NAME" type="text" class="monospace fg-white" value="" placeholder="service_name" maxlength="32" autocomplete="off" style="font-size:inherit; width:100%; padding:0 !important; background-color:inherit; color:inherit; border:none;">
+				</div>
+			</div>
+			<div class="float-left fit-content fit-height flex center left padding-s-right">
+				<div class="height:75%;" style="border-left:1px solid #999999;">&nbsp;</div>
+			</div>
+			<div class="float-left fit-content fit-height flex center padding-s-right">
+				<div id="BTN_GO_SAVE" class="button radius-small bg-darkblue fg-white border-darkgray" style="min-width:80px;">Save</div>
+			</div>
+			<div class="float-left fit-content fit-height flex center padding-s-right">
+				<div id="BTN_GO_RESET" class="button radius-small bg-darkblue fg-white border-darkgray" style="min-width:80px;">Reset</div>
+			</div>
+		</div>
+		<div id="DIV_EDITOR_ACE" class=" page-docking-bottom monospace" style="top:48px;"></div>
+	</div>
+
+	<script>
+		imenucli.run();
+	</script>
+
+</body>
+</html>
