@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS `imenu_services` (
 	`service_id`   VARCHAR(16)  NOT NULL DEFAULT '',
 	`intentURL`    VARCHAR(200) NOT NULL DEFAULT '',
 	`service_name` VARCHAR(32)  NOT NULL DEFAULT '',
+	`description`  TEXT NOT NULL,
 
   PRIMARY KEY (`recno`),
 	
